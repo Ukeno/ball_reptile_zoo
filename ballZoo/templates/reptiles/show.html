@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballZoo | Learn more</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <H1>{{ reptile.reptile_name }}</H1>
+        <div class="callout">
+            <span style="font-weight: 800">Did you know?</span><br/>{{ reptile.reptile_fact }}
+        </div>
+        <div class="reptiles-container">
+            <div class="show-reptile">
+                <img src="{{ url_for('static', filename='assets/') }}{{ reptile.reptile_photo }}"/>
+            </div>
+        </div>
+        <a href="/reptiles">⟨　Go back</a>
+    </div>
+</body>
+</html>

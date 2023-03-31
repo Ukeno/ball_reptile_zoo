@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ballZoo | Reptiles</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="container">
+        <H1>Ballpy</H1>
+        <br />
+        <div class="callout">
+            Ball.py is a reptile zoo focused on educating the public about these oft-misunderstood animals. 
+        </div>
+        <div class="reptiles-container">
+            {% for reptile in reptiles %}
+            <div class="reptile">
+                <H2>{{ reptile.reptile_name }}</H2>
+                <img src="{{ url_for('static', filename='assets/') }}{{reptile.reptile_photo}}" />
+                <a href="/reptiles/{{ reptile.reptile_id }}">Learn more ⟩</a>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="callout">
+            Learn about our <a href="/facts/new">Educational Program.</a>
+        </div>
+    </div>
+</body>
+
+</html>
